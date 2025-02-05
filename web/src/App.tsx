@@ -394,8 +394,8 @@ export const App: React.FC = () => {
     /* HTML */
 
     const openIdProviders: OpenIdProvider[] = isLocalhost()
-        ? ["Google", "Twitch", "Facebook"]
-        : ["Google", "Twitch"]; // Facebook requires business verification to publish the app
+        ? ["Google"]
+        : ["Google"]; // Facebook requires business verification to publish the app
     return (
         <div id="page">
 
