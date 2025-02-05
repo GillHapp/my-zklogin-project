@@ -1,101 +1,89 @@
-# Sui zkLogin demo
+# 🚀 zkLogin Demo on Sui Blockchain
 
-![Sui zkLogin demo](https://zklogin-demo.polymedia.app/img/open-graph.png)
+A demonstration of **Zero-Knowledge Login (zkLogin)** implementation on the **Sui Blockchain**, enabling secure, privacy-preserving authentication via **Google**, **Twitch**, and **Facebook**. This project leverages **Zero-Knowledge Proofs (zk-SNARKs)** to protect user data while allowing seamless interaction with the Sui network.
 
-A Sui zkLogin end-to-end implementation.
+---
 
-It shows how to use Google/Twitch/Facebook to create a Sui zkLogin address and send a transaction.
+## 📌 **Table of Contents**
 
-The code is meant to be as simple as possible to demonstrate how to put all the pieces together.
+- [🔑 Features](#-features)  
+- [⚡ Tech Stack](#-tech-stack)  
+- [⚙️ Setup Instructions](#-setup-instructions)  
+- [🔐 Authentication Flow](#-authentication-flow)  
+- [📝 License](#-license)  
 
-The app is live here:
-https://zklogin-demo.polymedia.app
+---
 
-Official docs: https://docs.sui.io/concepts/cryptography/zklogin
+## 🔑 **Features**
 
-## OpenID providers
+- **Secure Authentication** with Google, Twitch, and Facebook using **OpenID Connect (OIDC)**  
+- **Real-Time SUI Balance Tracking** for authenticated accounts  
+- **Transaction Execution** on the Sui network using **zkLogin signatures**  
+- **Faucet Integration** to request SUI tokens on the Sui **Devnet**  
+- **Session Management** with easy state clearing for better security  
 
-You'll need to create a developer account on Google/Twitch/Facebook. Then, create an "app" from which you can obtain the Client ID to populate your `web/src/config.json`.
+---
 
-Developer consoles: [Google](https://console.cloud.google.com/home/dashboard), [Twitch](https://dev.twitch.tv/console), [Facebook](https://developers.facebook.com/apps/).
+## ⚡ **Tech Stack**
 
-Docs: https://docs.sui.io/concepts/cryptography/zklogin#configure-a-developer-account-with-openid-provider
+- **Frontend:** React, TypeScript  
+- **Blockchain:** Sui Devnet, zkLogin Protocol  
+- **Authentication:** OpenID Connect (OIDC)  
+- **Cryptography:** Zero-Knowledge Proofs (zk-SNARKs)  
 
-## Front-end
+---
 
-This is a simple React app. The code is meant to be a tutorial for how to implement
-Sui zkLogin, and there are comments that explain the different steps.
+## ⚙️ **Setup Instructions**
 
-All the relevant code is in [web/src/App.tsx](./web/src/App.tsx)
-
-### Local development
-
-Create and modify `config.json`:
+### 1️⃣ **Clone the Repository**
 
 ```bash
-cp web/src/config.example.json web/src/config.json
+git clone https://github.com/GillHapp/my-zklogin-project
+cd my-zklogin-project
 ```
 
-Run the app locally:
+### 2️⃣ **Install Dependencies**
+
 ```bash
-cd web/
-pnpm install
-pnpm dev
+npm install
 ```
 
-Keep your browser console open so you can see debug and error messages.
+### 3️⃣ **Configure OpenID Credentials**
 
-## Back-end
+- Create a `config.json` file based on the provided `config.example.json`.  
+- Add your **Google**, **Twitch**, and **Facebook Client IDs** along with **Sui network endpoints**.
 
-### ZK proving service
+### 4️⃣ **Run the Project**
 
-This app uses the devnet prover that's maintained by Mysten Labs.
+```bash
+npm start
+```
 
-Alternatively, you can run your own prover:
-https://docs.sui.io/concepts/cryptography/zklogin#run-the-proving-service-in-your-backend
+- The app will be accessible at: [http://localhost:3000](http://localhost:3000)  
 
-### Salt service
+---
 
-This app uses a hard-coded value for the salt so it works out of the box without any further setup.
+## 🔐 **Authentication Flow**
 
-In production you have a few alternatives:
+1. **User Authentication:**  
+   The user selects an OpenID provider (Google/Twitch/Facebook) for login.  
+   
+2. **JWT Generation:**  
+   After successful authentication, a **JWT (JSON Web Token)** is generated.  
+   
+3. **Zero-Knowledge Proof Request:**  
+   The JWT is sent to the **prover service**, which returns a **Zero-Knowledge Proof**.  
+   
+4. **Secure Address Derivation:**  
+   The user's **Sui address** is derived securely, ensuring no personal data is exposed.  
+   
+5. **Transaction Signing:**  
+   Transactions are signed using **zkLogin credentials** and submitted to the Sui network.  
 
-- You can use the salt service that's maintained by Mysten Labs (you'll have to contact
-them to get whitelisted).
+---
 
-- You can ask the user to provide the salt, who must then remember it as if it were a password.
+## 📜 **License**
 
-- You can run your own salt service to return a unique salt for each user.
+This project is licensed under the [MIT License](LICENSE).
 
-https://docs.sui.io/concepts/cryptography/zklogin#user-salt-management
-
-## Resources
-
-### Docs
-
-Official Docs<br/>
-https://docs.sui.io/concepts/cryptography/zklogin
-
-Google OAuth 2.0 for Client-side Web Applications<br/>
-https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow
-
-### Videos
-
-A Complete Guide to zkLogin: How it Works and How to Integrate | Joy Wang<br/>
-https://www.youtube.com/watch?v=Jk4mq5IOUYc
-
-### Articles
-
-zkLogin Best Practices and Business Considerations for Builders<br/>
-https://blog.sui.io/zklogin-best-practices-considerations/
-
-zkLogin Demystified: Exploring Sui's Cutting-Edge Authentication<br/>
-https://blog.sui.io/zklogin-deep-dive/
-
-Set Up a Proving Service for zkLogin<br/>
-https://blog.sui.io/proving-service-zklogin/
-
-### Other
-
-zkLogin Audit<br/>
-https://github.com/sui-foundation/security-audits/blob/main/docs/zksecurity_zklogin-circuits.pdf
+---
