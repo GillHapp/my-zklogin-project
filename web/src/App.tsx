@@ -402,11 +402,11 @@ export const App: React.FC = () => {
             <Modal content={modalContent} />
 
             <div id="logos">
-                <LinkExternal href="https://polymedia.app" follow={true}>
-                    <img alt="polymedia" src="https://assets.polymedia.app/img/all/logo-nomargin-transparent-512x512.webp" className="icon" />
-                </LinkExternal>
 
-                <LinkExternal href="https://github.com/juzybits/polymedia-zklogin-demo" follow={true}>
+                <img alt="polymedia" src="https://assets.polymedia.app/img/all/logo-nomargin-transparent-512x512.webp" className="icon" />
+
+
+                <LinkExternal href="https://github.com/GillHapp/my-zklogin-project" follow={true}>
                     <GitHubLogo />
                 </LinkExternal>
             </div>
