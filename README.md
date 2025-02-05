@@ -1,4 +1,4 @@
-# 🚀 zkLogin Demo on Sui Blockchain
+# 🚀 zkIdentity on Sui Blockchain
 
 A demonstration of **Zero-Knowledge Login (zkLogin)** implementation on the **Sui Blockchain**, enabling secure, privacy-preserving authentication via **Google**, **Twitch**, and **Facebook**. This project leverages **Zero-Knowledge Proofs (zk-SNARKs)** to protect user data while allowing seamless interaction with the Sui network.
 

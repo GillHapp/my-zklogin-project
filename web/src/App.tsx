@@ -403,7 +403,7 @@ export const App: React.FC = () => {
 
             <div id="logos">
 
-                <img alt="polymedia" src="https://assets.polymedia.app/img/all/logo-nomargin-transparent-512x512.webp" className="icon" />
+                <img alt="polymedia" src="./logo.png" className="icon" />
 
 
                 <LinkExternal href="https://github.com/GillHapp/my-zklogin-project" follow={true}>
@@ -415,7 +415,7 @@ export const App: React.FC = () => {
                 <label>{NETWORK}</label>
             </div>
 
-            <h1>Sui zkLogin demo</h1>
+            <h1>zkIdentity</h1>
 
             <div id="login-buttons" className="section">
                 <h2>Log in:</h2>
