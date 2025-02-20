@@ -331,7 +331,7 @@ export const App: React.FC = () => {
      * Get the SUI balance for each account
      */
     async function fetchBalances(accounts: AccountData[]) {
-        if (accounts.length == 0) {
+        if (accounts.length == 0) { 
             return;
         }
         const newBalances = new Map<string, number>();
