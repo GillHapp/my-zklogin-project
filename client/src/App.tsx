@@ -14,7 +14,7 @@ import { NetworkName, makePolymediaUrl, requestSuiFromFaucet, shortenSuiAddress 
 import { LinkExternal, Modal, isLocalhost } from "@polymedia/suitcase-react";
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useRef, useState } from "react";
-import "./App.less";
+import "./App.css";
 
 /* Configuration */
 
@@ -331,7 +331,7 @@ export const App: React.FC = () => {
      * Get the SUI balance for each account
      */
     async function fetchBalances(accounts: AccountData[]) {
-        if (accounts.length == 0) { 
+        if (accounts.length == 0) {
             return;
         }
         const newBalances = new Map<string, number>();
